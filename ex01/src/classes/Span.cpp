@@ -59,7 +59,6 @@ void	Span::fillNumberRange(std::vector<int>::iterator start, std::vector<int>::i
 	}
 	return ;
 }
-//y si los datos estan fuera del vector que pasa?
 
 int	Span::shortestSpan(void)
 {
@@ -69,11 +68,14 @@ int	Span::shortestSpan(void)
 		{
 			throw Span::noSpanFound();
 		}
-		int	shortestSpan = this->_Numbers[2] - this->_Numbers[1];
+		std::vector<int> aux(this->_Numbers);
+		std::sort(aux.begin(), aux.end());
+		std::vector<int>::iterator it = aux.begin();
+		int	shortestSpan = *(it + 1) - *it;
 
-		for (size_t i = 0; i < this->_Numbers.size(); i++)
+		for (; it < aux.end() - 1; it++)
 		{
-			int	actualSpan = this->_Numbers[i + 1] - this->_Numbers[i];
+			int	actualSpan = *(it + 1) - *it;
 			if (actualSpan < shortestSpan)
 				shortestSpan = actualSpan;
 		}

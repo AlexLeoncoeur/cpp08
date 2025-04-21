@@ -13,11 +13,11 @@ int	main(void)
 	Span	fill(100);
 	
 	empty.addNumber(4);
-	five.addNumber(1);
+	five.addNumber(0);
+	five.addNumber(20);
 	five.addNumber(2);
-	five.addNumber(3);
-	five.addNumber(4);
 	five.addNumber(5);
+	five.addNumber(10);
 	five.addNumber(6);
 	Span	copy(five);
 
@@ -31,6 +31,8 @@ int	main(void)
 	copy.printNumbers();
 	five.printNumbers();
 	fill.printNumbers();
+	std::cout << "Shortest: " << five.shortestSpan() << std::endl;
+	std::cout << "Longest: " << five.longestSpan() << std::endl;
 
 	return 0;
 }

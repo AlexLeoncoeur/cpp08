@@ -1,6 +1,8 @@
 #pragma once
 
 # include <vector>
+# include <algorithm>
+# include <iostream>
 
 class Span
 {
@@ -13,13 +15,51 @@ private:
 public:
 
 	Span();
+	Span(unsigned int n);
 	Span(const Span &toCopy);
 	~Span();
 
 	Span &operator=(const Span &rhs);
 
+	int		shortestSpan(void);
+	int		longestSpan(void);
 	void	addNumber(int nb);
-	void	shortestSpan();
-	void	longestSpan();
-	void	addNumberRange(int start, int end);
+	void	fillNumberRange(std::vector<int>::iterator start, std::vector<int>::iterator end);
+	void	printNumbers(void);
+
+	class limitReached : public std::exception
+	{
+
+	public:
+
+		const char *what() const throw()
+		{
+			return ("Container limit reached");
+		}
+
+	};
+
+	class noSpanFound : public std::exception
+	{
+
+	public:
+
+		const char *what() const throw()
+		{
+			return ("Span not found");
+		}
+
+	};
+
+	class badRange : public std::exception
+	{
+
+	public:
+
+		const char *what() const throw()
+		{
+			return ("range is out of scope");
+		}
+
+	};
 };

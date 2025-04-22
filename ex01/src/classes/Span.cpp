@@ -44,7 +44,7 @@ void	Span::addNumber(int nb)
 	}
 	catch (std::exception &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 	return ;
 }
@@ -83,7 +83,7 @@ int	Span::shortestSpan(void)
 	}
 	catch (std::exception &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 		return (-1);
 	}
 	
@@ -103,7 +103,7 @@ int	Span::longestSpan()
 	}
 	catch (std::exception &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 		return (-1);
 	}
 }

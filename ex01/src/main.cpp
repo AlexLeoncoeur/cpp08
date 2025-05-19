@@ -12,6 +12,7 @@ int	main(void)
 	Span	five(5);
 	Span	fill(100);
 	
+	empty.shortestSpan();
 	empty.addNumber(4);
 	five.addNumber(0);
 	five.addNumber(20);

@@ -34,7 +34,7 @@ public:
 
 		const char *what() const throw()
 		{
-			return ("Container limit reached");
+			return ("Error: Container limit reached");
 		}
 
 	};
@@ -46,7 +46,7 @@ public:
 
 		const char *what() const throw()
 		{
-			return ("Span not found");
+			return ("Error: Span not found");
 		}
 
 	};
@@ -58,7 +58,7 @@ public:
 
 		const char *what() const throw()
 		{
-			return ("range is out of scope");
+			return ("Error: range is out of scope");
 		}
 
 	};
